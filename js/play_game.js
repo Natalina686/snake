@@ -102,6 +102,7 @@ const DIRECTION = {
   
         let firstCell = this.jellysnake[this.jellysnake.length - 1];
         let lastCell = this.jellysnake.shift();
+        // let { x, y } = lastCell;
         let oldLastCellx = lastCell.x;
         let oldLastCelly = lastCell.y;
   
