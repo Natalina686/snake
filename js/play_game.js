@@ -157,11 +157,7 @@ const DIRECTION = {
     }
   
     generatepearl() {
-      // width: 800 - 15,
-      // height: 600 - 15,
-      // Choose a random place on the grid.
-      // X is between 0 and 785 (52*15)
-      // Y is between 0 and 585 (39*15)
+     
       const randomX = Math.floor(Math.random() * 52) * this.squareSize;
       const randomY = Math.floor(Math.random() * 40) * this.squareSize;
   
@@ -206,7 +202,7 @@ const DIRECTION = {
       // Check if the head of the jellysnake overlaps with any part of the jellysnake.
       for (let i = 0; i < this.jellysnake.length - 1; i++) {
         if (head.x === this.jellysnake[i].x && head.y === this.jellysnake[i].y) {
-          // If so, go to the game over screen.
+         
           this.jellysnake = [];
           this.scene.start('Game Over', { score: this.score });
         }
