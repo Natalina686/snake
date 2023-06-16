@@ -18,16 +18,16 @@ export default class Jellysnake{
         this.pearl = this.scene.add
             .rectangle(0,0, this.tileSize, this.tileSize, 0x00ff00).setOrigin(0);
 
-        this.placepearl();
+        this.placePearl();
 
         this.scene.input.keyboard.on('keydown', e => {
             this.keydown(e);
         })
     }
 
-    placepearl() {
+    placePearl() {
         if(this.pearl == this.body){
-            this.placepearl();
+            this.placePearl();
         } else{
             this.pearl.x = Math.floor( Math.random() * this.scene.game.config.width / this.tileSize) * this.tileSize;
         this.pearl.y = Math.floor( Math.random() * this.scene.game.config.height / this.tileSize) * this.tileSize;
@@ -71,10 +71,10 @@ export default class Jellysnake{
         
     }
 
-    checkpearl(x, y) {
+    checkPearl(x, y) {
         if(this.pearl.x === x && this.pearl.y === y)
         {
-            this.placepearl();
+            this.placePearl();
             this.body.push(
                 this.scene.add.rectangle(0, 0, this.tileSize, this.tileSize, 0xffffff).setOrigin(0));
         }
@@ -97,7 +97,7 @@ export default class Jellysnake{
         let x = this.body[0].x + this.direction.x * this.tileSize;
         let y = this.body[0].y + this.direction.y * this.tileSize;
 
-        this.checkpearl(x, y);
+        this.checkPearl(x, y);
         this.checkDeath(x, y);
 
 
@@ -110,3 +110,4 @@ export default class Jellysnake{
         this.body[0].y = y;
     }
 }
+

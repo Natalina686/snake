@@ -42,7 +42,7 @@ const DIRECTION = {
       }
   
       // Generate the first pearl.
-      this.generatepearl();
+      this.generatePearl();
   
       // Speed value
       this.speedText = this.add.text(15, 18, 'Speed: 1', {
@@ -157,7 +157,7 @@ const DIRECTION = {
       }
     }
   
-    generatepearl() {
+    generatePearl() {
      
       const randomX = Math.floor(Math.random() * 52) * this.squareSize;
       const randomY = Math.floor(Math.random() * 40) * this.squareSize;
@@ -182,7 +182,7 @@ const DIRECTION = {
           this.pearl.destroy();
   
           // Make a new one.
-          this.generatepearl();
+          this.generatePearl();
   
           // Increase score.
           this.score++;
@@ -205,9 +205,10 @@ const DIRECTION = {
         if (head.x === this.jellysnake[i].x && head.y === this.jellysnake[i].y) {
          
           this.jellysnake = [];
-          this.scene.start('Game Over', { score: this.score });
+          this.scene.start('GameOver', { score: this.score });
         }
       }
     }
   }
   export default PlayGame;
+  
